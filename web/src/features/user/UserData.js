@@ -19,8 +19,7 @@ const UserData = () => {
     content = <p>"Loading..."</p>;
   } else if (isSuccess) {
     content = (
-      <section className="users">
-        <h1>Users List</h1>
+      <section className="user">
 
         <UserDetails
           userData={{ id: user.id, name: user.name, email: user.email }}
