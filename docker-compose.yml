@@ -1,0 +1,58 @@
+version: "3.8"
+services:
+  redis-db:
+    image: redis:6.2-alpine
+    ports:
+      - "6379:6379"
+    environment:
+      - ALLOW_EMPTY_PASSWORD=yes
+    volumes:
+      - redis-db:/data
+
+  zookeeper:
+    image: wurstmeister/zookeeper
+    restart: unless-stopped
+    ports: ["2181:2181", "2888:2888", "3888:3888"]
+
+  kafka:
+    image: wurstmeister/kafka
+    restart: unless-stopped
+    ports: ["9092:9092"]
+    hostname: kafka
+    environment:
+      - KAFKA_ADVERTISED_HOST_NAME=kafka
+      - KAFKA_ADVERTISED_PORT=9092
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - KAFKA_CREATE_TOPICS=users:1:1
+
+  producer:
+    build: ./api/producer
+    restart: unless-stopped
+    ports: ["8080:8080"]
+    environment:
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - REDIS_HOST=redis-db
+      - REDIS_PORT=6379
+
+  consumer:
+    build: ./api/consumer
+    restart: unless-stopped
+    ports: ["8081:8081"]
+    environment:
+      - KAFKA_ZOOKEEPER_CONNECT=zookeeper:2181
+      - REDIS_HOST=redis-db
+      - REDIS_PORT=6379
+
+  react-ui:
+    build:
+      context: ./web
+    ports:
+      - "3000:3000"
+    container_name: react-ui
+    stdin_open: true
+    volumes:
+      - ./web:/usr/src/app/web
+      - /usr/src/app/web/node_modules
+
+volumes:
+  redis-db:

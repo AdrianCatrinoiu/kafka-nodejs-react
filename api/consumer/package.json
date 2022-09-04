@@ -1,0 +1,27 @@
+{
+  "name": "kafka-consumer",
+  "version": "1.0.0",
+  "private": true,
+  "scripts": {
+    "dev": "nodemon src/consumer.js",
+    "start": "node src/consumer.js"
+  },
+  "dependencies": {
+    "avsc": "5.3.1",
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "cors": "^2.8.5",
+    "dotenv": "^9.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "kafka-node": "2.6.1",
+    "moment": "2.22.2",
+    "mongoose": "^5.12.7",
+    "pg": "7.4.3",
+    "redis": "^4.3.0",
+    "uuid": "3.3.2"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.7"
+  }
+}
