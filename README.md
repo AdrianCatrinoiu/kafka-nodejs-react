@@ -7,6 +7,7 @@ Kafka Authentication Flow using NodeJS
 * [How it works](#how-it-works)
 * [Backend Technologies](#backend-technologies)
 * [Frontend Technologies](#frontend-technologies)
+* [Frontend](#frontend)
 * [Setup](#setup-and-running)
 
 ## General Info
@@ -34,6 +35,12 @@ Full-stack React,NodeJS Auth SPA which uses Kafka on the backend side for decoup
 * **Yup** version: 0.32.9
 <br/>
 
+## Frontend
+
+![Screenshot 2022-09-04 at 23 23 12](https://user-images.githubusercontent.com/62521597/188332102-611de87b-ab96-4afa-80d3-6b89159029bf.png)
+![Screenshot 2022-09-04 at 23 22 18](https://user-images.githubusercontent.com/62521597/188332106-c0e32d0e-22e2-4c7c-898e-d9e14f3561d9.png)
+![Screenshot 2022-09-04 at 23 13 02](https://user-images.githubusercontent.com/62521597/188332109-294f0ef2-bc57-4101-8f84-aa5d72d4951b.png)
+<br/>
 ## Setup and running
 To run this project locally, use Docker:
 
