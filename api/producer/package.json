@@ -17,10 +17,7 @@
     "express-promise-router": "3.0.2",
     "jsonwebtoken": "^8.5.1",
     "kafka-node": "2.6.1",
-    "mongoose": "^5.12.7",
-    "pg": "7.4.3",
     "redis": "^4.3.0",
-    "underscore": "1.9.1",
     "uuid": "^8.3.2"
   },
   "devDependencies": {
