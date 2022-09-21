@@ -1,4 +1,3 @@
-const User = require("../models/User");
 const cryptService = require("../services/cryptService");
 const jwt = require("jsonwebtoken");
 const kafka = require("kafka-node");
